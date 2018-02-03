@@ -1,5 +1,5 @@
 [Unit]
-Description=Universal Media Server
+Description=Universal Media Server (Beta)
 Wants=network.target
 After=syslog.target network-online.target rpcbind.service
 
@@ -7,9 +7,9 @@ After=syslog.target network-online.target rpcbind.service
 #Environment="UMS_MAX_MEMORY=1280M"
 User=%i
 Group=users
-WorkingDirectory=/opt/ums/
+WorkingDirectory=/opt/ums-beta
 Type=simple
-ExecStart=/opt/ums/UMS.sh
+ExecStart=/opt/ums-beta/UMS.sh
 
 [Install]
 WantedBy=multi-user.target

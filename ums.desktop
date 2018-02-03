@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=Universal Media Server
+Name=Universal Media Server (Beta)
 Comment=A DLNA-compliant UPnP Media Server.
-Exec=/opt/ums/UMS.sh
+Exec=/opt/ums-beta/UMS.sh
 Icon=ums.png
 Terminal=false
 Type=Application

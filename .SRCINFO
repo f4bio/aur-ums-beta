@@ -1,6 +1,6 @@
-pkgbase = ums
+pkgbase = ums-beta
 	pkgdesc = Universal Media Server: a DLNA-compliant UPnP Media Server. Build based on Java 8.
-	pkgver = 6.8.0
+	pkgver = 7.0.0-rc2
 	pkgrel = 1
 	url = http://www.universalmediaserver.com/
 	arch = i686
@@ -17,16 +17,15 @@ pkgbase = ums
 	optdepends = dcraw: thumbnails creation support
 	optdepends = lib32-gcc-libs: tsMuxeR support
 	optdepends = lib32-glibc: tsMuxeR support
-	backup = opt/ums/UMS.conf
-	backup = opt/ums/WEB.conf
-	source = http://downloads.sourceforge.net/project/unimediaserver/Official%20Releases/Linux/UMS-6.8.0.tgz
+	backup = opt/ums-beta/UMS.conf
+	backup = opt/ums-beta/WEB.conf
+	source = https://www.fosshub.com/Universal-Media-Server.html/UMS-7.0.0-rc2.tgz
 	source = ums.desktop
 	source = ums.service
 	source = ums.timer
-	sha256sums = fb6a016f6494329e67a8e24e6671ab4f38eec60a07321045c665fb08d0ebf596
-	sha256sums = 0cdadbabef215b6539e56755147a8f626d9f1fadfb85e2e5b7f7f1b66f1cdef9
-	sha256sums = 1f6efefa58dde9148396bd9236a6985db0fa27f1c767067b52bfae1832f32284
-	sha256sums = 7fd36db71f39fde3d515c697101190f979b308d910b3c4210b90422669683ab0
+	sha256sums = 8435a4e64573cab7145488456876ad701d6585a1aaa2b2428a0d6e3c98247d53
+	sha256sums = ba81592f9c295e5643b15a34134c738df37d9ac2349697ed9bc96065d595cbb3
+	sha256sums = cd61840b5abc62dd88e0f9b4ebe87559a96483deb4baf86f9d4b3144c54b6da3
+	sha256sums = 54ffff80c88f05ea23d0f063f273bc28d3028289735d7408fc264931856218f4
 
 pkgname = ums
-

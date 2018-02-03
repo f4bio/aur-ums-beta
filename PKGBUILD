@@ -2,8 +2,8 @@
 # Contributor: Red Squirrel <iam at redsquirrel87 dot com>
 # Based on PMS PKGBUILD
 
-pkgname=ums
-pkgver=6.8.0
+pkgname=ums-beta
+pkgver=7.0.0-rc2
 pkgrel=1
 pkgdesc="Universal Media Server: a DLNA-compliant UPnP Media Server. Build based on Java 8."
 arch=('i686' 'x86_64')
@@ -18,41 +18,40 @@ optdepends=("vlc: Internet video/audio support"
             "dcraw: thumbnails creation support"
             "lib32-gcc-libs: tsMuxeR support"
             "lib32-glibc: tsMuxeR support")
-backup=(opt/ums/UMS.conf \
-        opt/ums/WEB.conf)
-#source=("http://app.oldfoss.com:81/download/Universal-Media-Server/1466892989UMS-$pkgver-Java8.tgz"
-source=("http://downloads.sourceforge.net/project/unimediaserver/Official%20Releases/Linux/UMS-$pkgver.tgz"
+backup=(opt/ums-beta/UMS.conf \
+        opt/ums-beta/WEB.conf)
+source=("https://www.fosshub.com/Universal-Media-Server.html/UMS-$pkgver.tgz"
         'ums.desktop'
         'ums.service'
         'ums.timer')
-sha256sums=('fb6a016f6494329e67a8e24e6671ab4f38eec60a07321045c665fb08d0ebf596'
-            '0cdadbabef215b6539e56755147a8f626d9f1fadfb85e2e5b7f7f1b66f1cdef9'
-            '1f6efefa58dde9148396bd9236a6985db0fa27f1c767067b52bfae1832f32284'
-            '7fd36db71f39fde3d515c697101190f979b308d910b3c4210b90422669683ab0')
+sha256sums=('8435a4e64573cab7145488456876ad701d6585a1aaa2b2428a0d6e3c98247d53'
+            'ba81592f9c295e5643b15a34134c738df37d9ac2349697ed9bc96065d595cbb3'
+            'cd61840b5abc62dd88e0f9b4ebe87559a96483deb4baf86f9d4b3144c54b6da3'
+            '54ffff80c88f05ea23d0f063f273bc28d3028289735d7408fc264931856218f4')
 
 package() {
-  mkdir -p ${pkgdir}/opt/ums
-  mkdir ${pkgdir}/opt/ums/database
+  mkdir -p ${pkgdir}/opt/ums-beta
+  mkdir ${pkgdir}/opt/ums-beta/database
   mkdir -p ${pkgdir}/usr/bin
   chmod -R 755 ${srcdir}/ums-$pkgver/plugins ${srcdir}/ums-$pkgver/documentation
   rm -R ${srcdir}/ums-$pkgver/linux/*
-  cp -r ${srcdir}/ums-$pkgver/* ${pkgdir}/opt/ums/
-  ln -s /usr/bin/ffmpeg ${pkgdir}/opt/ums/linux/ffmpeg
-  ln -s /usr/bin/ffmpeg ${pkgdir}/opt/ums/linux/ffmpeg64
-  ln -s /usr/bin/tsMuxeR ${pkgdir}/opt/ums/linux/tsMuxeR
-  ln -s /usr/bin/tsMuxeR ${pkgdir}/opt/ums/linux/tsMuxeR-new
-  chmod +x ${pkgdir}/opt/ums/UMS.sh
-  touch ${pkgdir}/opt/ums/UMS.conf
-  touch ${pkgdir}/opt/ums/debug.log
-  chgrp users ${pkgdir}/opt/ums/UMS.conf \
-              ${pkgdir}/opt/ums/WEB.conf \
-              ${pkgdir}/opt/ums/debug.log \
-              ${pkgdir}/opt/ums/database
+  cp -r ${srcdir}/ums-$pkgver/* ${pkgdir}/opt/ums-beta/
+  ln -s /usr/bin/ffmpeg ${pkgdir}/opt/ums-beta/linux/ffmpeg
+  ln -s /usr/bin/ffmpeg ${pkgdir}/opt/ums-beta/linux/ffmpeg64
+  ln -s /usr/bin/tsMuxeR ${pkgdir}/opt/ums-beta/linux/tsMuxeR
+  ln -s /usr/bin/tsMuxeR ${pkgdir}/opt/ums-beta/linux/tsMuxeR-new
+  chmod +x ${pkgdir}/opt/ums-beta/UMS.sh
+  touch ${pkgdir}/opt/ums-beta/UMS.conf
+  touch ${pkgdir}/opt/ums-beta/debug.log
+  chgrp users ${pkgdir}/opt/ums-beta/UMS.conf \
+              ${pkgdir}/opt/ums-beta/WEB.conf \
+              ${pkgdir}/opt/ums-beta/debug.log \
+              ${pkgdir}/opt/ums-beta/database
 
-  chmod g+w ${pkgdir}/opt/ums/UMS.conf \
-            ${pkgdir}/opt/ums/WEB.conf \
-            ${pkgdir}/opt/ums/debug.log \
-            ${pkgdir}/opt/ums/database 
+  chmod g+w ${pkgdir}/opt/ums-beta/UMS.conf \
+            ${pkgdir}/opt/ums-beta/WEB.conf \
+            ${pkgdir}/opt/ums-beta/debug.log \
+            ${pkgdir}/opt/ums-beta/database
 
   unzip -q -u ${srcdir}/ums-$pkgver/ums.jar -d ums_jar
   install -d -m 755 ${pkgdir}/usr/share/pixmaps

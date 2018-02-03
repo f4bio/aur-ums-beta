@@ -1,5 +1,5 @@
 [Unit]
-Description=Start UMS delayed on boot
+Description=Start UMS (Beta) delayed on boot
 
 [Timer]
 OnBootSec=5min
