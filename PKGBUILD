@@ -3,7 +3,7 @@
 # Based on PMS PKGBUILD
 
 pkgname=ums-beta
-pkgver=7.0.0-rc2
+pkgver=7.0.0rc2
 pkgrel=1
 pkgdesc="Universal Media Server: a DLNA-compliant UPnP Media Server. Build based on Java 8."
 arch=('i686' 'x86_64')
